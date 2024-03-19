@@ -12,7 +12,7 @@ const io = socketIO(server)
 //liberar o uso livre da api
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('/config', (req, res) => {
     const socketAddress = `http://${req.hostname}:${server.address().port}`;  
     res.json({ socketAddress });
 });
@@ -20,7 +20,6 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Servidor HTTP e WebSocket escutando na porta ${PORT}`);
-  console.log('link para conexão : ', `http://${hostname}:${server.address().port}`)
 });
 
 // Configurações adicionais do Socket.IO
