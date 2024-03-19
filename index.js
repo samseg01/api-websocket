@@ -13,7 +13,8 @@ const io = socketIO(server)
 app.use(cors());
 
 app.get('/config', (req, res) => {
-    const socketAddress = `http://${req.hostname}:${server.address().port}`;  
+    const socketAddress = `http://${req.hostname}`;
+    //${server.address().port}  
     res.json({ socketAddress });
 });
 
