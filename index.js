@@ -13,7 +13,8 @@ const socketIO = require('socket.io');
 const httpServer = http.createServer();
 const io = socketIO(httpServer, {
   cors: {
-    origin: "https://client-side-production.up.railway.app/",
+    //https://client-side-production.up.railway.app/
+    origin: 'https://client-side-production.up.railway.app',
     credentials : true
   }
 })
