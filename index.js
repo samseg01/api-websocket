@@ -15,7 +15,7 @@ app.get('/page-master', (req,res) => {
 const io = socketIO(httpServer, {
   cors: {
     //https://client-side-production.up.railway.app
-    origin: 'https://client-side-production.up.railway.app' , //`http://localhost:${PORT}`],
+    origin: 'http://localhost:5500' , //`http://localhost:${PORT}`],
     credentials : true
   }
 })

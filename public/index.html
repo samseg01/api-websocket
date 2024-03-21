@@ -16,23 +16,26 @@
             align-items: center;
             justify-content: center;
         }
-        button {
+        /* button {
             height: 100px;
             width: 100px;
             border-radius: 100%;
-        }
+        } */
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
     <script>
-        const btn = document.getElementById('btn')
+        const tela = document.querySelector('body')
         const socket = io()
 
         socket.on('message', (message) =>{
-            console.log('mensagem do servidor', message)
+            // console.log('mensagem do servidor', message)
         })
 
-        btn.addEventListener('click', () =>{
-            socket.emit('message', 'botão apertado')
+        tela.addEventListener('click', (e) =>{
+            let x = e.clientX;
+            let y = e.clientY;
+            console.log(x, '-', y);
+            socket.emit('message', [x,y]);
         })
     </script>
 </body>
